@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: FormationRepository::class)]
 class Formation
@@ -23,18 +24,23 @@ class Formation
     private ?int $id = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
+    #[Assert\NotNull(message: "La date est obligatoire.")]
+    #[Assert\LessThanOrEqual("today", message: "La date ne doit pas être postérieure à aujourd'hui.")]
     private ?\DateTimeInterface $publishedAt = null;
 
     #[ORM\Column(length: 100, nullable: true)]
+    #[Assert\NotBlank(message: "Le titre est obligatoire.")]
     private ?string $title = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
 
     #[ORM\Column(length: 20, nullable: true)]
+    #[Assert\NotBlank(message: "L'identifiant de la vidéo est obligatoire.")]
     private ?string $videoId = null;
 
     #[ORM\ManyToOne(inversedBy: 'formations')]
+    #[Assert\NotNull(message: "La playlist est obligatoire.")]
     private ?Playlist $playlist = null;
 
     /**
