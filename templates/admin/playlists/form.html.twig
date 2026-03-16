@@ -1,0 +1,46 @@
+{% extends "basefront.html.twig" %}
+
+{% block body %}
+
+<h2 class="mt-3">{{ mode }} d'une playlist</h2>
+
+<div class="mt-4">
+
+    {{ form_start(formPlaylist) }}
+
+    <div class="mb-3">
+        {{ form_label(formPlaylist.name) }}
+        {{ form_widget(formPlaylist.name, {'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(formPlaylist.name) }}
+    </div>
+
+    <div class="mb-3">
+        {{ form_label(formPlaylist.description) }}
+        {{ form_widget(formPlaylist.description, {'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(formPlaylist.description) }}
+    </div>
+
+    {% if mode == 'Modification' %}
+        <div class="mt-4">
+            <h5>Formations de cette playlist</h5>
+
+            {% if playlist.formations|length > 0 %}
+                <ul>
+                    {% for formation in playlist.formations %}
+                        <li>{{ formation.title }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>Aucune formation associée.</p>
+            {% endif %}
+        </div>
+    {% endif %}
+
+    <button class="btn btn-success mt-3">Enregistrer</button>
+    <a href="{{ path('admin.playlists') }}" class="btn btn-secondary mt-3">Annuler</a>
+
+    {{ form_end(formPlaylist) }}
+
+</div>
+
+{% endblock %}
