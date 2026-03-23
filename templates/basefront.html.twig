@@ -12,16 +12,29 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('accueil') }}">Accueil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('formations') }}">Formations</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('playlists') }}">Playlists</a>
-                    </li>                    
-                </ul>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ path('accueil') }}">Accueil</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ path('formations') }}">Formations</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ path('playlists') }}">Playlists</a>
+    </li>
+
+    {% if app.user %}
+        <li class="nav-item">
+            <a class="nav-link" href="{{ path('admin_home') }}">Back office</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-danger" href="{{ path('app_logout') }}">Déconnexion</a>
+        </li>
+    {% else %}
+        <li class="nav-item">
+            <a class="nav-link" href="{{ path('app_login') }}">Connexion</a>
+        </li>
+    {% endif %}
+</ul>
             </div>
         </nav>        
     </div>
