@@ -15,6 +15,13 @@
             <file>file:/C:/Users/User/Documents/Atelier1_SLAM/mediatekformation-master/src/Controller/Admin/FormationsAdminController.php</file>
             <file>file:/C:/Users/User/Documents/Atelier1_SLAM/mediatekformation-master/src/Form/FormationType.php</file>
             <file>file:/C:/Users/User/Documents/Atelier1_SLAM/mediatekformation-master/templates/admin/formations/form.html.twig</file>
+            <file>file:/C:/Users/User/Documents/Atelier1_SLAM/mediatekformation-master/config/packages/security.yaml</file>
+            <file>file:/C:/Users/User/Documents/Atelier1_SLAM/mediatekformation-master/src/Controller/SecurityController.php</file>
+            <file>file:/C:/Users/User/Documents/Atelier1_SLAM/mediatekformation-master/templates/security/login.html.twig</file>
+            <file>file:/C:/Users/User/Documents/Atelier1_SLAM/mediatekformation-master/templates/basefront.html.twig</file>
+            <file>file:/C:/Users/User/Documents/Atelier1_SLAM/mediatekformation-master/config/packages/doctrine.yaml</file>
+            <file>file:/C:/Users/User/Documents/Atelier1_SLAM/mediatekformation-master/tests/Entity/FormationTest.php</file>
+            <file>file:/C:/Users/User/Documents/Atelier1_SLAM/mediatekformation-master/tests/Entity/FormationValidationTest.php</file>
         </group>
     </open-files>
 </project-private>
